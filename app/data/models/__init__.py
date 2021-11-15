@@ -19,7 +19,7 @@ class Person(Base):
     city = Column(String(150), nullable=False)
     country = Column(String(45), nullable=False)
     phone_number = Column(String(45), nullable=False)
-    email = Column(String(45))
+    email = Column(String(125))
     gender_id = Column(Integer, ForeignKey('gender.gender_id'))
     gender = relationship('Gender')
 
