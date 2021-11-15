@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:latest
+    container_name: "Dating_App"
+    ports:
+      - "3307:3306"
+    cap_add:
+      - SYS_NICE
+    environment:
+      MYSQL_ROOT_PASSWORD: s3cr37
