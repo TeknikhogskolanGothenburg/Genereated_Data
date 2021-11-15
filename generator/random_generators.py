@@ -88,8 +88,11 @@ def generate_random_person(gender):
     else:
         street_no = address['Street/Box No.']
         if len(street_no) != 0:
-            start_no, end_no = street_no.split(' - ')
-            street_no = str(random.choice(list(range(int(start_no), int(end_no) + 1))))
+            if len(street_no.split(' - ')) != 2:
+                street_no = '1'
+            else:
+                start_no, end_no = street_no.split(' - ')
+                street_no = str(random.choice(list(range(int(start_no), int(end_no) + 1))))
 
     address['Street Name'] += ' ' + street_no
 
